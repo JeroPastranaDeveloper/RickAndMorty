@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.rickMorty.dateFilter.DateFilterActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/container_date"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/button_filter"
+        android:visibility="gone">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_white"
+        android:gravity="center"
+        android:padding="@dimen/default_padding"
+        android:textSize="@dimen/text_title"
+        android:text="@string/pick_date" />
+
+    <TextView
+        android:id="@+id/date_picker_first_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_white"
+        android:layout_marginTop="@dimen/date_padding"
+        android:padding="@dimen/double_default_padding"
+        android:text="@string/first_date" />
+
+    <TextView
+        android:id="@+id/date_picker_second_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_white"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/date_padding"
+        android:padding="@dimen/double_default_padding"
+        android:text="@string/second_date" />
+
+    <Button
+        android:id="@+id/button_accept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textColor="@color/black_white"
+        android:layout_margin="@dimen/default_padding"
+        android:backgroundTint="@color/login_background"
+        android:text="@string/done" />
+</FrameLayout>

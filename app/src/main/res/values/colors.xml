@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_white">#FF000000</color>
+    <color name="white_black">#FFFFFFFF</color>
+    <color name="login_background">#FAFD7CFF</color>
+    <color name="login_title">#1b244c</color>
+    <color name="login_hint">#49454F</color>
+    <color name="red">#FF0000</color>
+
+    <color name="background_text">#FF000000</color>
+    <color name="on_boarding_text_color">#FFFFFFFF</color>
+    <color name="dot_indicator">#FFFFFFFF</color>
+</resources>

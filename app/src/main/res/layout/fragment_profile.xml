@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.boardingFragments.ProfileFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_on_boarding_padding"
+        android:textColor="@color/on_boarding_text_color"
+        android:background="@drawable/text_background"
+        android:layout_marginTop="@dimen/image_width"
+        android:text="@string/third_on_boarding" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding">
+
+        <Button
+            android:id="@+id/button_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/start"
+            android:backgroundTint="@color/login_background"
+            android:textAllCaps="false"
+            android:textColor="@color/black_white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</FrameLayout>
