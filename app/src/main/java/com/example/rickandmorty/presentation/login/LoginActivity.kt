@@ -91,6 +91,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // Preferencias van al domain y lo guarda en el datasource
     private fun saveCredentials(email: String, password: String) {
         val editor = sharedPreferences.edit()
         editor.putString(resources.getString(R.string.email), email)
