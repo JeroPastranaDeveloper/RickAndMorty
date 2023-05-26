@@ -2,21 +2,18 @@ package com.example.rickandmorty.presentation.rickMorty.dateFilter
 
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.content.res.Configuration
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowInsetsController
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rickandmorty.R
 import com.example.rickandmorty.data.constants.Constants
+import com.example.rickandmorty.data.constants.initStatusBar
 import com.example.rickandmorty.data.model.Episode
 import com.example.rickandmorty.databinding.ActivityDateFilterBinding
 import com.example.rickandmorty.presentation.rickMorty.adapters.DateFilterAdapter
@@ -88,18 +85,20 @@ class DateFilterActivity : AppCompatActivity() {
         }
 
         viewModel.isReset.observe(this) { isReset ->
-            if (isReset) {
-                binding.containerDate.visibility = View.VISIBLE
-                binding.datePickerFirstDate.visibility = View.GONE
-                binding.datePickerSecondDate.visibility = View.GONE
-                binding.textTitle.visibility = View.GONE
-                binding.buttonAccept.text = resources.getString(R.string.reset)
-            } else {
-                binding.containerDate.visibility = View.GONE
-                binding.datePickerFirstDate.visibility = View.VISIBLE
-                binding.datePickerSecondDate.visibility = View.VISIBLE
-                binding.textTitle.visibility = View.VISIBLE
-                binding.buttonAccept.text = resources.getString(R.string.done)
+            with(binding) {
+                if (isReset) {
+                    containerDate.visibility = View.VISIBLE
+                    datePickerFirstDate.visibility = View.GONE
+                    datePickerSecondDate.visibility = View.GONE
+                    textTitle.visibility = View.GONE
+                    buttonAccept.text = resources.getString(R.string.reset)
+                } else {
+                    containerDate.visibility = View.GONE
+                    datePickerFirstDate.visibility = View.VISIBLE
+                    datePickerSecondDate.visibility = View.VISIBLE
+                    textTitle.visibility = View.VISIBLE
+                    buttonAccept.text = resources.getString(R.string.done)
+                }
             }
         }
     }
@@ -109,31 +108,7 @@ class DateFilterActivity : AppCompatActivity() {
         viewModel.getEpisodes()
         binding.containerDate.visibility = View.GONE
 
-        val isDarkTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
-        if (isDarkTheme) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.white_black)
-                window.decorView.windowInsetsController?.setSystemBarsAppearance(
-                    0,
-                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
-                )
-            } else {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.white_black)
-                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-            }
-        } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.white_black)
-                window.decorView.windowInsetsController?.setSystemBarsAppearance(
-                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
-                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
-                )
-            } else {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.white_black)
-                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-            }
-        }
-
+        initStatusBar()
     }
 
     private fun initAdapter() {

@@ -3,21 +3,17 @@ package com.example.rickandmorty.presentation.profile
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.res.Configuration
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.WindowInsetsController
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.rickandmorty.R
 import com.example.rickandmorty.data.constants.Constants
+import com.example.rickandmorty.data.constants.initStatusBar
 import com.example.rickandmorty.databinding.ActivityProfileBinding
 import com.example.rickandmorty.presentation.login.LoginActivity
 
@@ -36,37 +32,10 @@ class ProfileActivity : AppCompatActivity() {
         binding.profileViewModel = viewModel
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        initViews()
+        initStatusBar()
         initPreferences()
         initListeners()
         initObservers()
-    }
-
-    private fun initViews() {
-        val isDarkTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
-        if(isDarkTheme) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.white_black)
-                window.decorView.windowInsetsController?.setSystemBarsAppearance(
-                    0,
-                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
-                )
-            } else {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.white_black)
-                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-            }
-        } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.white_black)
-                window.decorView.windowInsetsController?.setSystemBarsAppearance(
-                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
-                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
-                )
-            } else {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.white_black)
-                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-            }
-        }
     }
 
     private fun initObservers() {
