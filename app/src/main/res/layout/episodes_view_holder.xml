@@ -23,17 +23,11 @@
 
             <TextView
                 android:id="@+id/text_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_white"
-                android:layout_weight="1" />
+                style="@style/style_text_episodes_view_holder"/>
 
             <TextView
                 android:id="@+id/text_season"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_white"
-                android:layout_weight="1"
+                style="@style/style_text_episodes_view_holder"
                 android:textAlignment="textEnd" />
         </LinearLayout>
 
@@ -45,17 +39,11 @@
 
             <TextView
                 android:id="@+id/text_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_white"
-                android:layout_weight="1" />
+                style="@style/style_text_episodes_view_holder" />
 
             <TextView
                 android:id="@+id/text_episode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_white"
-                android:layout_weight="1"
+                style="@style/style_text_episodes_view_holder"
                 android:textAlignment="textEnd"/>
         </LinearLayout>
     </LinearLayout>

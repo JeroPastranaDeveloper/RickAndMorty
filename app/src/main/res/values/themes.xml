@@ -31,7 +31,7 @@
         <item name="postSplashScreenTheme">@style/Theme.RickAndMorty</item>
     </style>
 
-    <style name="lblDetalle">
+    <style name="style_text_detail">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingBottom">@dimen/default_padding</item>
@@ -40,11 +40,18 @@
         <item name="android:textSize">@dimen/default_text</item>
     </style>
 
-    <style name="lblCharacterHolder">
+    <style name="style_text_character_view_holder">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:titleMarginTop">@dimen/small_padding</item>
         <item name="android:textColor">@color/black_white</item>
         <item name="android:textSize">@dimen/default_text</item>
+    </style>
+
+    <style name="style_text_episodes_view_holder">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black_white</item>
+        <item name="android:layout_weight">1</item>
     </style>
 </resources>
