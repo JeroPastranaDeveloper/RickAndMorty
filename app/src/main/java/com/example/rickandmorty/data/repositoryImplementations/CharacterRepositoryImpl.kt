@@ -1,11 +1,13 @@
-package com.example.rickandmorty.data.repository
+package com.example.rickandmorty.data.repositoryImplementations
 
 import com.example.rickandmorty.data.model.Character
 import com.example.rickandmorty.data.source.CharactersDataSource
 import com.example.rickandmorty.data.constants.Status
+import com.example.rickandmorty.data.repository.CharacterRepository
 import javax.inject.Inject
 
-class CharacterRepositoryImpl @Inject constructor(private val dataSource: CharactersDataSource) : CharacterRepository {
+class CharacterRepositoryImpl @Inject constructor(private val dataSource: CharactersDataSource) :
+    CharacterRepository {
     override suspend fun getCharacter(id: Int): Character? {
         return dataSource.getCharacter(id)
     }

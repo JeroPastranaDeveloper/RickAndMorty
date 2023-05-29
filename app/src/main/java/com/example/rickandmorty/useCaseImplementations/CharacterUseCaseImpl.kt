@@ -1,8 +1,9 @@
-package com.example.rickandmorty.domain.usecase
+package com.example.rickandmorty.useCaseImplementations
 
 import com.example.rickandmorty.data.model.Character
 import com.example.rickandmorty.data.repository.CharacterRepository
 import com.example.rickandmorty.data.constants.Status
+import com.example.rickandmorty.domain.usecase.CharacterUseCase
 import javax.inject.Inject
 
 class CharacterUseCaseImpl @Inject constructor(private val characterRepository: CharacterRepository) :

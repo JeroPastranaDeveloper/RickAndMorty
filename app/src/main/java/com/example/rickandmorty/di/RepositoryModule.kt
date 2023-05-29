@@ -1,9 +1,9 @@
 package com.example.rickandmorty.di
 
 import com.example.rickandmorty.data.repository.CharacterRepository
-import com.example.rickandmorty.data.repository.CharacterRepositoryImpl
+import com.example.rickandmorty.data.repositoryImplementations.CharacterRepositoryImpl
 import com.example.rickandmorty.data.repository.EpisodeRepository
-import com.example.rickandmorty.data.repository.EpisodeRepositoryImpl
+import com.example.rickandmorty.data.repositoryImplementations.EpisodeRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
